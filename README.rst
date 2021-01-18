@@ -1,7 +1,7 @@
 Elo Calculator
 ###############
 
-A simple elo rating calculator.
+A simple command line interface for calculating elo rating.
 
 Usage
 ======
