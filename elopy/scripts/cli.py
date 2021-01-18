@@ -20,8 +20,12 @@ def rate(player_rating, opponent_rating, score, k_factor, round):
     """
     Return new ratings after a match.
     """
-    new_player_rating = calculate_rating(player_rating, opponent_rating, score, k_factor, round)
-    new_opponent_rating = calculate_rating(opponent_rating, player_rating, invert_score(score), k_factor, round)
+
+    try:
+        new_player_rating = calculate_rating(player_rating, opponent_rating, score, k_factor, round)
+        new_opponent_rating = calculate_rating(opponent_rating, player_rating, invert_score(score), k_factor, round)
+    except ValueError as error:
+        click.echo(error)
 
     # Adding some color to the output
     if new_player_rating > player_rating:
